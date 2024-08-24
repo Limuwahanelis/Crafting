@@ -7,6 +7,7 @@ public class PlayerInteractions : MonoBehaviour
 {
     [SerializeField] Transform _cameraTrans;
     [SerializeField] LayerMask _interactionMask;
+    [SerializeField] PlayerInventory _inventory;
     private IInteractable _interactable;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class PlayerInteractions : MonoBehaviour
         else
         {
             _interactable?.Deselect();
+            _interactable = null;
         }
     }
 
@@ -32,6 +34,7 @@ public class PlayerInteractions : MonoBehaviour
     {
         if(_interactable==null) return;
         _interactable.Interact();
+        
     }
     private void OnDrawGizmosSelected()
     {
