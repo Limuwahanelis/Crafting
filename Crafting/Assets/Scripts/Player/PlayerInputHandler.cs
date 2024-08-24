@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField] PlayerMovement _playerMovement;
+    [SerializeField] PlayerInteractions _playerInteractions;
     private Vector2 _moveDirection;
     // Start is called before the first frame update
     void Start()
@@ -23,5 +24,9 @@ public class PlayerInputHandler : MonoBehaviour
     {
         _moveDirection = inputValue.Get<Vector2>();
         
+    }
+    public void OnAttack()
+    {
+        _playerInteractions.InteractWithSelectedItem();
     }
 }
