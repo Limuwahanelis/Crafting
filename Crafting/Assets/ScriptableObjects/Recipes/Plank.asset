@@ -17,3 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3e05ae4ae6bacce4c8ee7718aab469d5, type: 2}
   _result: {fileID: 3438675932374116494, guid: 4900a643be0b63c4a97e865dd037d784, type: 3}
   _resultSprite: {fileID: 21300000, guid: 6e7faf13eb4e2c242a9c3ceb6e11571b, type: 3}
+  _successChance: 50

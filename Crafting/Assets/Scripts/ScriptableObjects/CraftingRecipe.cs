@@ -18,4 +18,7 @@ public class CraftingRecipe : ScriptableObject
     [SerializeField] GameObject _result;
     public Sprite ResultSprite => _resultSprite;
     [SerializeField] Sprite _resultSprite;
+
+    public int SuccessChance=>_successChance;
+    [SerializeField] int _successChance;
 }
