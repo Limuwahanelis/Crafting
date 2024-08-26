@@ -40,6 +40,10 @@ public class PickableItem : MonoBehaviour,IInteractable,IPickable
     {
         _playerInventory = inventory;
     }
+    public void SetInventorySprite(Sprite sprite)
+    {
+        _inInventoryImage = sprite;
+    }
     public void PickUp()
     {
         gameObject.SetActive(false);
