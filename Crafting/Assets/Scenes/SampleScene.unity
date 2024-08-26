@@ -331,7 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 67234800}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!1 &94407691
 GameObject:
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 94407696}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &94407694
 MonoBehaviour:
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 113944238}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!222 &113944241
 CanvasRenderer:
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 115476289}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &115476287
 MonoBehaviour:
@@ -937,7 +937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 163296511}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &163296509
 MonoBehaviour:
@@ -1178,7 +1178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 272722952}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &272722950
 MonoBehaviour:
@@ -1466,7 +1466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 293632753}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &293632751
 MonoBehaviour:
@@ -1728,7 +1728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 379892329}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &379892327
 MonoBehaviour:
@@ -2179,7 +2179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 712869587}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &712869585
 MonoBehaviour:
@@ -2394,7 +2394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 768647584}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &768647582
 MonoBehaviour:
@@ -2550,7 +2550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 972343349}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &972343347
 MonoBehaviour:
@@ -2657,7 +2657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 985601632}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &985601630
 MonoBehaviour:
@@ -2764,7 +2764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 1003946702}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &1003946700
 MonoBehaviour:
@@ -3285,14 +3285,7 @@ MonoBehaviour:
   _playerMovement: {fileID: 142765970}
   _playerInteractions: {fileID: 142765972}
   _playerInventory: {fileID: 1544419335}
-  _mouseDeltaAction: {fileID: 288317497989844159, guid: 839f772f7f637cb48848d3298639247c,
-    type: 3}
-  _mouseDeltaActionMap:
-    m_Name: Mouse Delta
-    m_Id: b3ce9a80-6d61-4a9c-a4e4-a39a1579db89
-    m_Asset: {fileID: 0}
-    m_Actions: []
-    m_Bindings: []
+  _playerInput: {fileID: 1548933485}
 --- !u!1 &1701505149
 GameObject:
   m_ObjectHideFlags: 0
@@ -3601,7 +3594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 2031666731}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &2031666729
 MonoBehaviour:
@@ -3708,7 +3701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 2043787420}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &2043787418
 MonoBehaviour:
@@ -3900,7 +3893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySlot: {fileID: 2103091295}
   _slotInteractionUI: {fileID: 282699169}
-  _inspectItemAction: {fileID: -4582079225667443710, guid: 839f772f7f637cb48848d3298639247c,
+  _inspectItemAction: {fileID: -49052763019182144, guid: 839f772f7f637cb48848d3298639247c,
     type: 3}
 --- !u!114 &2103091293
 MonoBehaviour:
