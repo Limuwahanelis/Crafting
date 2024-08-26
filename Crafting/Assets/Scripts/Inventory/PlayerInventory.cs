@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class PlayerInventory : MonoBehaviour
 {
+    [SerializeField] CraftingManager _crafting;
     [SerializeField] Transform _throwItemTrans;
     [SerializeField] List<InventorySlot> _inventorySlots = new List<InventorySlot>();
     private List<PickableItem> _itemsInInventory=new List<PickableItem>();
-    private List<CraftingResource> _craftingResources = new List<CraftingResource>();
+    
     private void Start()
     {
         foreach (InventorySlot slot in _inventorySlots)
@@ -26,7 +28,7 @@ public class PlayerInventory : MonoBehaviour
         }
         CraftingResource resource = item.GetComponent<CraftingResource>();
         if (resource == null) return;
-        _craftingResources.Add(resource);
+        _crafting.AddResource(resource);
     }
     public void ThrowItem(PickableItem item)
     {
@@ -35,31 +37,28 @@ public class PlayerInventory : MonoBehaviour
         _itemsInInventory.Remove(item);
         CraftingResource resource = item.GetComponent<CraftingResource>();
         if (resource == null) return;
-        _craftingResources.Remove(resource);
+        _crafting.RemoveResource(resource);
     }
-    public int GetNumberOfResourceInInventory(CraftingResourceType resourceType)
+    public void RemoveResource(CraftingResource resource)
     {
-        return _craftingResources.Count(x => x.ResourceType == resourceType);
-    }
-    public bool CheckIfInventoryContainsRequiredResources(CraftingRecipe.CraftingRecipeShort recipe)
-    {
-        for(int i=0;i< recipe.resourceTypes.Count();i++)
-        {
-            if (_craftingResources.Count(x => x.ResourceType == recipe.resourceTypes[i]) < recipe.resourcesNum[i])
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-    public void RemoveResourceOfType(CraftingResourceType resourceType)
-    {
-        CraftingResource resource= _craftingResources.Find((x) => x.ResourceType == resourceType);
-        InventorySlot slot= _inventorySlots.Find((x) => x.ItemInSlot==resource.AssociatedItem);
-        PickableItem item= slot.ItemInSlot;
+        InventorySlot slot = _inventorySlots.Find((x) => x.ItemInSlot == resource.AssociatedItem);
+        PickableItem item = slot.ItemInSlot;
         slot.EmptySlot();
         _itemsInInventory.Remove(item);
-        _craftingResources.Remove(resource);
-        
     }
+    public void OnItemCrafted(PickableItem item)
+    {
+        item.SetInventory(this);
+        PickItemUp(item);
+    }
+    //public void RemoveResourceOfType(CraftingResourceType resourceType)
+    //{
+    //    CraftingResource resource= _craftingResources.Find((x) => x.ResourceType == resourceType);
+    //    InventorySlot slot= _inventorySlots.Find((x) => x.ItemInSlot==resource.AssociatedItem);
+    //    PickableItem item= slot.ItemInSlot;
+    //    slot.EmptySlot();
+    //    _itemsInInventory.Remove(item);
+    //    _craftingResources.Remove(resource);
+        
+    //}
 }

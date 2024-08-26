@@ -9,7 +9,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(RecipeSlot))]
 public class RecipeSlotPlayerInteractions : MonoBehaviour
 {
-    [SerializeField] PlayerInventory _playerInventory;
+    //[SerializeField] PlayerInventory _playerInventory;
+    [SerializeField] CraftingManager _crafting;
     [SerializeField] RecipeSlot _recipeSlot;
     [SerializeField] bool _discovered;
     [SerializeField] RecipeDescription _recipeDescription;
@@ -57,21 +58,22 @@ public class RecipeSlotPlayerInteractions : MonoBehaviour
     public void TryCraft()
     {
         if (!_discovered) return;
-        if(!_playerInventory.CheckIfInventoryContainsRequiredResources(recipeShort)) return;
+        if(!_crafting.CheckIfContainsRequiredResources(recipeShort)) return;
         for(int i=0;i<recipeShort.resourceTypes.Length;i++) 
         {
             for(int j = 0; j < recipeShort.resourcesNum[i];j++)
             {
-                _playerInventory.RemoveResourceOfType(recipeShort.resourceTypes[i]);
+                _crafting.RemoveResourceOfType(recipeShort.resourceTypes[i]);
             }
             
         }
-        PickableItem item= Instantiate(_recipeSlot.CraftingRecipe.Result).GetComponent<PickableItem>();
-        item.gameObject.SetActive(false);
-        item.SetInventory(_playerInventory);
-        _playerInventory.PickItemUp(item);
+        _crafting.CraftItemFromrecipe(_recipeSlot.CraftingRecipe);
         _recipeDescription.SetDescription(recipeShort);
         Debug.Log("Crafted");
+    }
+    public void SetCraftingManager(CraftingManager crafting)
+    {
+        _crafting= crafting;
     }
     public void DisplayRecipe()
     {

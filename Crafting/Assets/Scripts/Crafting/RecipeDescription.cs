@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RecipeDescription : MonoBehaviour
 {
-    [SerializeField] PlayerInventory _inventory;
+    [SerializeField] CraftingManager _crafting;
     [SerializeField] List<ResourceDescription> _resourceDescriptions = new List<ResourceDescription>();
     public void SetDescription(CraftingRecipe.CraftingRecipeShort recipe)
     {
@@ -14,7 +14,7 @@ public class RecipeDescription : MonoBehaviour
         {
             resourceType= recipe.resourceTypes[index];
             _resourceDescriptions[index].gameObject.SetActive(true);
-            _resourceDescriptions[index].SetDescription(recipe.resourcesNum[index], _inventory.GetNumberOfResourceInInventory(resourceType), resourceType.name);
+            _resourceDescriptions[index].SetDescription(recipe.resourcesNum[index], _crafting.GetNumberOfResource(resourceType), resourceType.name);
             _resourceDescriptions[index].SetSprite(resourceType.ResourceSprite);
         }
         for(; index<_resourceDescriptions.Count;index++)
