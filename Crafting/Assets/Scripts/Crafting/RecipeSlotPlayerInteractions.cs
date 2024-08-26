@@ -5,17 +5,17 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(RecipeSlot))]
 public class RecipeSlotPlayerInteractions : MonoBehaviour
 {
-    //[SerializeField] PlayerInventory _playerInventory;
     [SerializeField] CraftingManager _crafting;
     [SerializeField] RecipeSlot _recipeSlot;
     [SerializeField] bool _discovered;
     [SerializeField] RecipeDescription _recipeDescription;
-    [SerializeField] InputActionReference _mousePosAction;
     [SerializeField] float _recipeDescriptionDistanceFromMouse = 10f;
+    InputActionReference _mousePosAction;
     private bool _isPointerIn = false;
     CraftingRecipe.CraftingRecipeShort recipeShort;
     CraftingResourceType[] types;
@@ -24,9 +24,12 @@ public class RecipeSlotPlayerInteractions : MonoBehaviour
     private Vector2 _mousePos;
     private void Start()
     {
-        _mousePosAction.action.performed += UpdateMousePos;
-        _recipePos = transform.position;
-        _recipePos.x += GetComponent<RectTransform>().rect.width / 2 + _recipeDescription.GetComponent<RectTransform>().rect.width / 2;
+
+        if (!_discovered)
+        {
+            _recipeSlot.SetSprite(null);
+            return;
+        }
         int numberOfDistinctResources = _recipeSlot.CraftingRecipe.CraftingResources.Distinct().Count();
         types = new CraftingResourceType[numberOfDistinctResources];
          num = new int[numberOfDistinctResources];
@@ -44,16 +47,24 @@ public class RecipeSlotPlayerInteractions : MonoBehaviour
         }
         recipeShort.resourcesNum = num;
         recipeShort.resourceTypes= types;
-        if (!_discovered) _recipeSlot.SetSprite(null);
+        
     }
     private void Update()
     {
         if(_isPointerIn)
         {
             _recipePos = _mousePos;
+            _recipePos.y -= _recipeDescription.GetComponent<RectTransform>().rect.height/2;
             _recipePos.x += _recipeDescription.GetComponent<RectTransform>().rect.width / 2+ _recipeDescriptionDistanceFromMouse;
             _recipeDescription.GetComponent<RectTransform>().position = _recipePos;
         }
+    }
+    public void SetUp(InputActionReference mousePosAction, CraftingManager crafting,RecipeDescription recipeDescription)
+    {
+        _crafting = crafting;
+        _recipeDescription = recipeDescription;
+        _mousePosAction = mousePosAction;
+        _mousePosAction.action.performed += UpdateMousePos;
     }
     public void TryCraft()
     {
@@ -71,15 +82,11 @@ public class RecipeSlotPlayerInteractions : MonoBehaviour
         _recipeDescription.SetDescription(recipeShort);
         Debug.Log("Crafted");
     }
-    public void SetCraftingManager(CraftingManager crafting)
-    {
-        _crafting= crafting;
-    }
+
     public void DisplayRecipe()
     {
         _isPointerIn = true;
         _recipeDescription.SetDescription(recipeShort);
-        //_recipeDescription.GetComponent<RectTransform>().position = _recipePos;
         _recipeDescription.gameObject.SetActive(true);
     }
     public void HideRecipe()

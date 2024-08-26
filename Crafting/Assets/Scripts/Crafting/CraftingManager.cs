@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class CraftingManager : MonoBehaviour
 {
-    public UnityEvent<CraftingResource> OnCraftingResourceRemoved;
-    public UnityEvent<PickableItem> OnItemCrafted;
+    [SerializeField] InputActionReference _mousePosAction;
+    [SerializeField] RecipeDescription _recipeDescription;
     [SerializeField] List<CraftingResource> _craftingResources= new List<CraftingResource>();
     [SerializeField] List<GameObject> _recipeGrids=new List<GameObject>();
     [SerializeField] List<RecipeSlot> _recipeSlots=new List<RecipeSlot>();
+    public UnityEvent<CraftingResource> OnCraftingResourceRemoved;
+    public UnityEvent<PickableItem> OnItemCrafted;
+   
+    
     private void Start()
     {
         _recipeSlots.Clear();
@@ -20,7 +25,7 @@ public class CraftingManager : MonoBehaviour
         }
         for (int i = 0; i < _recipeSlots.Count; i++)
         {
-            _recipeSlots[i].GetComponent<RecipeSlotPlayerInteractions>().SetCraftingManager(this);
+            _recipeSlots[i].GetComponent<RecipeSlotPlayerInteractions>().SetUp(_mousePosAction,this,_recipeDescription);
         }
     }
     public void AddResource(CraftingResource resource)
