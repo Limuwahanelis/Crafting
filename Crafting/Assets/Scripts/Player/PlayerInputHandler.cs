@@ -10,6 +10,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] PlayerInteractions _playerInteractions;
     [SerializeField] PlayerInventory _playerInventory;
     [SerializeField] InputActionReference _mouseDeltaAction;
+    [SerializeField] InputActionMap _mouseDeltaActionMap;
     private Vector2 _moveDirection;
     private bool _isInventoryOpen = false;
     // Start is called before the first frame update
@@ -28,7 +29,7 @@ public class PlayerInputHandler : MonoBehaviour
         _moveDirection = inputValue.Get<Vector2>();
         
     }
-    public void OnAttack()
+    public void OnInteract()
     {
         _playerInteractions.InteractWithSelectedItem();
     }

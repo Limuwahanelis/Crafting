@@ -7,7 +7,6 @@ public class PlayerInteractions : MonoBehaviour
 {
     [SerializeField] Transform _cameraTrans;
     [SerializeField] LayerMask _interactionMask;
-    [SerializeField] PlayerInventory _inventory;
     private IInteractable _interactable;
     // Start is called before the first frame update
     void Start()
