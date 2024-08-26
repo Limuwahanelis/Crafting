@@ -36,7 +36,10 @@ public class PickableItem : MonoBehaviour,IInteractable,IPickable
     {
         _text.gameObject.SetActive(false);
     }
-
+    public void SetInventory(PlayerInventory inventory)
+    {
+        _playerInventory = inventory;
+    }
     public void PickUp()
     {
         gameObject.SetActive(false);
