@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c76b097c03bbb4294f4f156871950c, type: 3}
+  m_Name: Plank
+  m_EditorClassIdentifier: 
+  _craftingResources:
+  - {fileID: 11400000, guid: 3e05ae4ae6bacce4c8ee7718aab469d5, type: 2}
+  - {fileID: 11400000, guid: 3e05ae4ae6bacce4c8ee7718aab469d5, type: 2}
+  _result: {fileID: 0}
+  _resultSprite: {fileID: 0}
