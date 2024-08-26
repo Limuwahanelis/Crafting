@@ -37,6 +37,10 @@ public class PlayerInventory : MonoBehaviour
         if (resource == null) return;
         _craftingResources.Remove(resource);
     }
+    public int GetNumberOfResourceInInventory(CraftingResourceType resourceType)
+    {
+        return _craftingResources.Count(x => x.ResourceType == resourceType);
+    }
     public bool CheckIfInventoryContainsRequiredResources(CraftingRecipe.CraftingRecipeShort recipe)
     {
         for(int i=0;i< recipe.resourceTypes.Count();i++)
