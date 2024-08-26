@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ public class CraftingManager : MonoBehaviour
     [SerializeField] List<RecipeSlot> _recipeSlots=new List<RecipeSlot>();
     public UnityEvent<CraftingResource> OnCraftingResourceRemoved;
     public UnityEvent<PickableItem> OnItemCrafted;
-   
+    public UnityEvent<CraftingRecipe> OnItemCraftingFailed;
     
     private void Start()
     {
@@ -57,11 +58,24 @@ public class CraftingManager : MonoBehaviour
         _craftingResources.Remove(resource);
         OnCraftingResourceRemoved?.Invoke(resource);
     }
-    public void CraftItemFromrecipe(CraftingRecipe recipe)
+    public void CraftItemFromRecipe(CraftingRecipe recipe)
     {
-        PickableItem item = Instantiate(recipe.Result).GetComponent<PickableItem>();
-        item.gameObject.SetActive(false);
-        OnItemCrafted?.Invoke(item);
+        float number= UnityEngine.Random.Range(0, 100);
+        if (number < recipe.SuccessChance)
+        {
+            PickableItem item = Instantiate(recipe.Result).GetComponent<PickableItem>();
+            item.gameObject.SetActive(false);
+            OnItemCrafted?.Invoke(item);
+        }
+        else OnItemCraftingFailed?.Invoke(recipe);
 
+    }
+    public void Fail(CraftingRecipe recipe)
+    {
+        Debug.Log("FAOIsaf");
+    }
+    private void OnDisable()
+    {
+        _recipeDescription.gameObject.SetActive(false );
     }
 }

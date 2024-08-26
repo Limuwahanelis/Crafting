@@ -15,6 +15,8 @@ public class ResourceDescription : MonoBehaviour
     }
     public void SetDescription(int requiredNumber, int availableNumber, string resourceTypeName)
     {
+        if(requiredNumber>availableNumber) _text.color = Color.red;
+        else _text.color = Color.green;
         _text.text = $"{availableNumber}/{requiredNumber} x {resourceTypeName}";
     }
 }

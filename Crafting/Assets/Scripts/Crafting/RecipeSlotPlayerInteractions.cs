@@ -78,15 +78,14 @@ public class RecipeSlotPlayerInteractions : MonoBehaviour
             }
             
         }
-        _crafting.CraftItemFromrecipe(_recipeSlot.CraftingRecipe);
-        _recipeDescription.SetDescription(recipeShort);
-        Debug.Log("Crafted");
+        _crafting.CraftItemFromRecipe(_recipeSlot.CraftingRecipe);
+        _recipeDescription.SetDescription(recipeShort,_recipeSlot.CraftingRecipe.SuccessChance);
     }
 
     public void DisplayRecipe()
     {
         _isPointerIn = true;
-        _recipeDescription.SetDescription(recipeShort);
+        _recipeDescription.SetDescription(recipeShort, _recipeSlot.CraftingRecipe.SuccessChance);
         _recipeDescription.gameObject.SetActive(true);
     }
     public void HideRecipe()

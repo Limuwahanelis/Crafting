@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RecipeDescription : MonoBehaviour
 {
     [SerializeField] CraftingManager _crafting;
     [SerializeField] List<ResourceDescription> _resourceDescriptions = new List<ResourceDescription>();
-    public void SetDescription(CraftingRecipe.CraftingRecipeShort recipe)
+    [SerializeField] TMP_Text _successChancetext;
+    public void SetDescription(CraftingRecipe.CraftingRecipeShort recipe,int successChance)
     {
         int index = 0;
         CraftingResourceType resourceType;
@@ -21,6 +23,7 @@ public class RecipeDescription : MonoBehaviour
         {
             _resourceDescriptions[index].gameObject.SetActive(false);
         }
+        _successChancetext.text = $"Crafting success chance \n {successChance}%";
     }
 
 }
