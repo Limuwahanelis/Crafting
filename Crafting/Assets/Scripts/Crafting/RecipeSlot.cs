@@ -5,21 +5,12 @@ using UnityEngine.UI;
 
 public class RecipeSlot : MonoBehaviour
 {
+
+    public CraftingRecipe CraftingRecipe => _craftingRecipe;
     [SerializeField] CraftingRecipe _craftingRecipe;
     [SerializeField] Image _image;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnValidate()
     {
-        _image.sprite = _craftingRecipe.ResultSprite;
+        if(_image != null && _craftingRecipe!=null) _image.sprite = _craftingRecipe.ResultSprite;
     }
 }

@@ -5,27 +5,28 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(RecipeSlot))]
 public class RecipeSlotPlayerInteractions : MonoBehaviour
 {
     [SerializeField] PlayerInventory _playerInventory;
-    [SerializeField] CraftingRecipe _craftingRecipe;
+    [SerializeField] RecipeSlot _recipeSlot;
     CraftingRecipe.CraftingRecipeShort recipeShort;
     CraftingResourceType[] types;
     int[] num;
     private void Start()
     {
-        int numberOfDistinctResources = _craftingRecipe.CraftingResources.Distinct().Count();
+        int numberOfDistinctResources = _recipeSlot.CraftingRecipe.CraftingResources.Distinct().Count();
         types = new CraftingResourceType[numberOfDistinctResources];
          num = new int[numberOfDistinctResources];
 
-        for(int i=0;i<_craftingRecipe.CraftingResources.Count();i++)
+        for(int i=0;i< _recipeSlot.CraftingRecipe.CraftingResources.Count();i++)
         {
-            if (types.Contains(_craftingRecipe.CraftingResources[i])) continue;
-            types[i] = _craftingRecipe.CraftingResources[i];
+            if (types.Contains(_recipeSlot.CraftingRecipe.CraftingResources[i])) continue;
+            types[i] = _recipeSlot.CraftingRecipe.CraftingResources[i];
         }
-        for (int i = 0; i < _craftingRecipe.CraftingResources.Count(); i++)
+        for (int i = 0; i < _recipeSlot.CraftingRecipe.CraftingResources.Count(); i++)
         {
-            int index = Array.IndexOf(types, _craftingRecipe.CraftingResources[i]);
+            int index = Array.IndexOf(types, _recipeSlot.CraftingRecipe.CraftingResources[i]);
             num[index]++;
         }
         recipeShort.resourcesNum = num;
@@ -42,6 +43,10 @@ public class RecipeSlotPlayerInteractions : MonoBehaviour
             }
             
         }
+        PickableItem item= Instantiate(_recipeSlot.CraftingRecipe.Result).GetComponent<PickableItem>();
+        item.gameObject.SetActive(false);
+        item.SetInventory(_playerInventory);
+        _playerInventory.PickItemUp(item);
         Debug.Log("Crafted");
     }
 }
