@@ -41,7 +41,7 @@ public class PlayerInventory : MonoBehaviour
     {
         for(int i=0;i< recipe.resourceTypes.Count();i++)
         {
-            if (_craftingResources.Count((x) => x.ResourceType) != recipe.resourcesNum[i])
+            if (_craftingResources.Count(x => x.ResourceType == recipe.resourceTypes[i]) < recipe.resourcesNum[i])
             {
                 return false;
             }
