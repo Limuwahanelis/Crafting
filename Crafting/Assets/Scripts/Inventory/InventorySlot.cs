@@ -9,7 +9,7 @@ public class InventorySlot : MonoBehaviour
 {
     public Action<PickableItem> OnItemThrown;
     public bool IsTaken => _isTaken;
-
+    public PickableItem ItemInSlot => _item;
     [SerializeField] Sprite _emptyIcon;
     [SerializeField] Image _image;
     private PickableItem _item = null;
