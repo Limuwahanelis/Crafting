@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 0}
   _recipeSlot: {fileID: 671073406527282875}
+  _discovered: 0
 --- !u!114 &671073406527282875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff88e002d0a7814d8236ab3450bab1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _craftingRecipe: {fileID: 11400000, guid: b8a6a71c224ea28489667adaa6aa28ae, type: 2}
+  _craftingRecipe: {fileID: 0}
   _image: {fileID: 2610606603154705448}
 --- !u!114 &4941539682070207157
 MonoBehaviour:
