@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c76b097c03bbb4294f4f156871950c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f5654058918c984881a5591aaf3328a, type: 3}
   m_Name: Plank
   m_EditorClassIdentifier: 
-  _craftingResources:
-  - {fileID: 11400000, guid: 3e05ae4ae6bacce4c8ee7718aab469d5, type: 2}
-  - {fileID: 11400000, guid: 3e05ae4ae6bacce4c8ee7718aab469d5, type: 2}
-  _result: {fileID: 0}
-  _resultSprite: {fileID: 0}
