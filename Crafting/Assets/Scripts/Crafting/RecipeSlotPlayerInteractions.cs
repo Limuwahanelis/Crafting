@@ -10,16 +10,16 @@ using UnityEngine.UI;
 [RequireComponent(typeof(RecipeSlot))]
 public class RecipeSlotPlayerInteractions : MonoBehaviour
 {
-    [SerializeField] CraftingManager _crafting;
     [SerializeField] RecipeSlot _recipeSlot;
     [SerializeField] bool _discovered;
-    [SerializeField] RecipeDescription _recipeDescription;
     [SerializeField] float _recipeDescriptionDistanceFromMouse = 10f;
-    InputActionReference _mousePosAction;
+    private InputActionReference _mousePosAction;
+    private CraftingManager _crafting;
+    private RecipeDescription _recipeDescription;
     private bool _isPointerIn = false;
-    CraftingRecipe.CraftingRecipeShort recipeShort;
-    CraftingResourceType[] types;
-    int[] num;
+    private CraftingRecipe.CraftingRecipeShort recipeShort;
+    private CraftingResourceType[] types;
+    private int[] num;
     private Vector3 _recipePos;
     private Vector2 _mousePos;
     private void Start()
@@ -51,13 +51,18 @@ public class RecipeSlotPlayerInteractions : MonoBehaviour
     }
     private void Update()
     {
-        if(_isPointerIn)
+        if (!_discovered) return;
+        if (_isPointerIn)
         {
             _recipePos = _mousePos;
             _recipePos.y -= _recipeDescription.GetComponent<RectTransform>().rect.height/2;
             _recipePos.x += _recipeDescription.GetComponent<RectTransform>().rect.width / 2+ _recipeDescriptionDistanceFromMouse;
             _recipeDescription.GetComponent<RectTransform>().position = _recipePos;
         }
+    }
+    public void UnlockRecipe()
+    {
+        _discovered = true;
     }
     public void SetUp(InputActionReference mousePosAction, CraftingManager crafting,RecipeDescription recipeDescription)
     {
@@ -84,12 +89,14 @@ public class RecipeSlotPlayerInteractions : MonoBehaviour
 
     public void DisplayRecipe()
     {
+        if (!_discovered) return;
         _isPointerIn = true;
         _recipeDescription.SetDescription(recipeShort, _recipeSlot.CraftingRecipe.SuccessChance);
         _recipeDescription.gameObject.SetActive(true);
     }
     public void HideRecipe()
     {
+        if (!_discovered) return;
         _isPointerIn = false;
         _recipeDescription.gameObject.SetActive(false);
     }
