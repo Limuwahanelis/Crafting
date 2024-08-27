@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public List<InventorySlot> InventorySlots=>_inventorySlots;
     [SerializeField] CraftingManager _crafting;
     [SerializeField] Transform _throwItemTrans;
     [SerializeField] List<InventorySlot> _inventorySlots = new List<InventorySlot>();
@@ -51,4 +55,5 @@ public class PlayerInventory : MonoBehaviour
         item.SetInventory(this);
         PickItemUp(item);
     }
+
 }
