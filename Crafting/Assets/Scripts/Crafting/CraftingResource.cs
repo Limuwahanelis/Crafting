@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CraftingResource : MonoBehaviour
+[RequireComponent(typeof(PickableItem))]public class CraftingResource : MonoBehaviour
 {
     public PickableItem AssociatedItem => _associatedItem;
     public CraftingResourceType ResourceType => _resourceType;

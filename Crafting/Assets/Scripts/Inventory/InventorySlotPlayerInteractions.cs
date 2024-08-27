@@ -29,7 +29,6 @@ public class InventorySlotPlayerInteractions :MonoBehaviour, IPointerEnterHandle
     {
         _isPointerIn = true;
     }
-
     public void OnPointerExit(PointerEventData eventData)
     {
         _isPointerIn = false;

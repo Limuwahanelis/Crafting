@@ -70,10 +70,6 @@ public class CraftingManager : MonoBehaviour
         else OnItemCraftingFailed?.Invoke(recipe);
 
     }
-    public void Fail(CraftingRecipe recipe)
-    {
-        Debug.Log("FAOIsaf");
-    }
     private void OnDisable()
     {
         _recipeDescription.gameObject.SetActive(false );

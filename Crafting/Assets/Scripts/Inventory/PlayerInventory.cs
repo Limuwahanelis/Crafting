@@ -33,6 +33,7 @@ public class PlayerInventory : MonoBehaviour
     public void ThrowItem(PickableItem item)
     {
         item.transform.position=_throwItemTrans.position;
+        item.ResetModelPos();
         item.gameObject.SetActive(true);
         _itemsInInventory.Remove(item);
         CraftingResource resource = item.GetComponent<CraftingResource>();
