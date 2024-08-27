@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public List<InventorySlot> InventorySlots=>_inventorySlots;
     [SerializeField] CraftingManager _crafting;
     [SerializeField] Transform _throwItemTrans;
     [SerializeField] List<InventorySlot> _inventorySlots = new List<InventorySlot>();
@@ -17,17 +21,19 @@ public class PlayerInventory : MonoBehaviour
             slot.OnItemThrown += ThrowItem;
         }
     }
-    public void PickItemUp(PickableItem item)
+    public bool PickItemUp(PickableItem item)
     {
+        
         InventorySlot slot = _inventorySlots.Find((x) => x.IsTaken == false);
         if (slot!=null)
         {
             slot.SetSlot(item);
             _itemsInInventory.Add(item);
         }
+        else return false;
         CraftingResource resource = item.GetComponent<CraftingResource>();
-        if (resource == null) return;
-        _crafting.AddResource(resource);
+        if (resource != null) _crafting.AddResource(resource);
+        return true;
     }
     public void ThrowItem(PickableItem item)
     {
@@ -51,4 +57,5 @@ public class PlayerInventory : MonoBehaviour
         item.SetInventory(this);
         PickItemUp(item);
     }
+
 }

@@ -55,7 +55,7 @@ public class RecipeSlotPlayerInteractions : MonoBehaviour
         if (_isPointerIn)
         {
             _recipePos = _mousePos;
-            _recipePos.y -= _recipeDescription.GetComponent<RectTransform>().rect.height/2;
+            //_recipePos.y -= _recipeDescription.GetComponent<RectTransform>().rect.height/2;
             _recipePos.x += _recipeDescription.GetComponent<RectTransform>().rect.width / 2+ _recipeDescriptionDistanceFromMouse;
             _recipeDescription.GetComponent<RectTransform>().position = _recipePos;
         }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3327909760985884909}
   - component: {fileID: 3960395258174652406}
   m_Layer: 0
-  m_Name: Wooden plank
+  m_Name: Plank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,13 +212,15 @@ GameObject:
   - component: {fileID: 4085000823419056616}
   - component: {fileID: 8197710145141579383}
   - component: {fileID: 3061751183186751404}
+  - component: {fileID: 954384308715375543}
+  - component: {fileID: 2402242285422031343}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4085000823419056616
 RectTransform:
   m_ObjectHideFlags: 0
@@ -372,3 +374,34 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 8197710145141579383}
   m_maskType: 0
+--- !u!114 &954384308715375543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6927470786613134293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7d34ddd0197574eafb7cc1e2320bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToFollow: {fileID: 2016498755566820841}
+  _transformToParentToOnUnparent: {fileID: 0}
+  _unparentOnStart: 1
+  _XAxis: 1
+  _YAxis: 1
+  _ZAxis: 1
+  _offset: {x: 0, y: 0.529, z: 0}
+--- !u!114 &2402242285422031343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6927470786613134293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd76aa11860d3f343abb93949592682b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
