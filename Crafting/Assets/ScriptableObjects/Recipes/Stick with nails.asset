@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c76b097c03bbb4294f4f156871950c, type: 3}
+  m_Name: Stick with nails
+  m_EditorClassIdentifier: 
+  _craftingResources:
+  - {fileID: 11400000, guid: fd3b3e71d419ef74b8ee69910bd4a742, type: 2}
+  - {fileID: 11400000, guid: 10d58fe8967b20741a897020702750d2, type: 2}
+  _result: {fileID: 1470987258323300251, guid: d93bb362d8c88634eb85fe78364ca3a0, type: 3}
+  _resultSprite: {fileID: 21300000, guid: d2342cc0eddf4524fad1e4d485331865, type: 3}
+  _successChance: 100

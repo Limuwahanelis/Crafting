@@ -17,11 +17,15 @@ public class PickableItem : MonoBehaviour,IInteractable,IPickable
     [SerializeField] Sprite _inInventoryImage;
     [SerializeField] TMP_Text _text;
     [SerializeField] PlayerInventory _playerInventory;
+    [SerializeField] GameObject _model;
     private void Awake()
     {
         _text.text = $"{ InteractionDescription} \n {_itemName}";
     }
-
+    public void ResetModelPos()
+    {
+        _model.transform.localPosition = Vector3.zero;
+    }
     public void Interact()
     {
         PickUp();
@@ -29,14 +33,22 @@ public class PickableItem : MonoBehaviour,IInteractable,IPickable
 
     public void Select()
     {
-       _text.gameObject.SetActive(true);
+        // for some reason disabling and enabling gameobject from script disables update function in script so we disabe text component instead.
+        _text.enabled = true;
     }
 
     public void Deselect()
     {
-        _text.gameObject.SetActive(false);
+        _text.enabled=false;
     }
-
+    public void SetInventory(PlayerInventory inventory)
+    {
+        _playerInventory = inventory;
+    }
+    public void SetInventorySprite(Sprite sprite)
+    {
+        _inInventoryImage = sprite;
+    }
     public void PickUp()
     {
         gameObject.SetActive(false);

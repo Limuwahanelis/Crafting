@@ -49,6 +49,7 @@ public class InventorySlotInteractionsUI : MonoBehaviour
     }
     private void OnDisable()
     {
+        _isPointerIn = false;
         _selectActionAction.action.performed -= TryCloseMenu;
     }
 }

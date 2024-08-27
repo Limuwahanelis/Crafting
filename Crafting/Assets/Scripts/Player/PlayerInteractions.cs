@@ -20,6 +20,11 @@ public class PlayerInteractions : MonoBehaviour
         {
             _interactable?.Deselect();
             _interactable = hit.transform.gameObject.GetComponent<IInteractable>();
+            if (_interactable == null)
+            {
+                Rigidbody rb = hit.rigidbody;
+                if(rb != null) _interactable=rb.GetComponent<IInteractable>();
+            }
             if (_interactable != null) _interactable.Select();
         }
         else
