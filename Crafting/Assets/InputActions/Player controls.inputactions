@@ -316,7 +316,7 @@
                     "name": "",
                     "id": "b73d9554-9aac-4b7f-bf9a-9caf7ac9e23e",
                     "path": "<Mouse>/press",
-                    "interactions": "Hold(duration=0.1)",
+                    "interactions": "Hold(duration=0.05)",
                     "processors": "",
                     "groups": "Keyboard & Mouse",
                     "action": "Hold",
