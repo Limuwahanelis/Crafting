@@ -5,6 +5,7 @@ using UnityEngine;
 public class FollowObject : MonoBehaviour
 {
     [SerializeField] Transform _transformToFollow;
+    [SerializeField] Transform _transformToParentToOnUnparent;
     [SerializeField] bool _unparentOnStart;
     [SerializeField] bool _XAxis;
     [SerializeField] bool _YAxis;
@@ -14,7 +15,7 @@ public class FollowObject : MonoBehaviour
     void Awake()
     {
         _originalpos = transform.position;
-        transform.parent = null;
+        transform.parent = _transformToParentToOnUnparent;
     }
 
     // Update is called once per frame
