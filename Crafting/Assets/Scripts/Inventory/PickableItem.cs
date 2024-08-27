@@ -55,7 +55,10 @@ public class PickableItem : MonoBehaviour,IInteractable,IPickable
     }
     public void PickUp()
     {
-        gameObject.SetActive(false);
-        _playerInventory.PickItemUp(this);
+        if(_playerInventory.PickItemUp(this))
+        {
+            gameObject.SetActive(false);
+        }
+        
     }
 }
