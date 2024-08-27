@@ -48,13 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d583dc1a845e3214caf0fe5468d335f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemName: Box
-  _itemDescription: dddsdsds
+  _itemName: Wood
+  _itemDescription: 
   _interactionDescription: Pick up
-  _inInventoryImage: {fileID: 21300000, guid: 814f9b6dc7569de498d9cd414c7648dc, type: 3}
+  _inInventoryImage: {fileID: 21300000, guid: 2d98f1114b590d64fb7559e35c8a4c21, type: 3}
   _text: {fileID: 8955250211232177096}
   _playerInventory: {fileID: 0}
-  _model: {fileID: 0}
+  _model: {fileID: 4245278051241533553}
 --- !u!114 &4569440702762366165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 3576120624153591133}
   - component: {fileID: 1816984384390534674}
   - component: {fileID: 8955250211232177096}
+  - component: {fileID: 3300907910034997484}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -385,3 +386,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 3576120624153591133}
   m_maskType: 0
+--- !u!114 &3300907910034997484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6655009131931766660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7d34ddd0197574eafb7cc1e2320bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToFollow: {fileID: 2727124018098833528}
+  _transformToParentToOnUnparent: {fileID: 0}
+  _unparentOnStart: 1
+  _XAxis: 1
+  _YAxis: 1
+  _ZAxis: 1
+  _offset: {x: 0, y: 0.98, z: 0}
