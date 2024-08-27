@@ -17,7 +17,6 @@ public class FollowObject : MonoBehaviour
         _originalpos = transform.position;
         transform.SetParent(_transformToParentToOnUnparent);
     }
-
     // Update is called once per frame
     void Update()
     {

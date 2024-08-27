@@ -41,6 +41,10 @@ public class PickableItem : MonoBehaviour,IInteractable,IPickable
     {
         _text.enabled=false;
     }
+    public void SetDescriptionParent(Transform parent)
+    {
+        _text.transform.SetParent(parent);
+    }
     public void SetInventory(PlayerInventory inventory)
     {
         _playerInventory = inventory;

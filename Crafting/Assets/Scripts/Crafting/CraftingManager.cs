@@ -10,6 +10,7 @@ public class CraftingManager : MonoBehaviour
 {
     [SerializeField] InputActionReference _mousePosAction;
     [SerializeField] RecipeDescription _recipeDescription;
+    [SerializeField] Transform _runtimeDescriptionHolder;
     [SerializeField] List<CraftingResource> _craftingResources= new List<CraftingResource>();
     [SerializeField] List<GameObject> _recipeGrids=new List<GameObject>();
     [SerializeField] List<RecipeSlot> _recipeSlots=new List<RecipeSlot>();
@@ -65,6 +66,7 @@ public class CraftingManager : MonoBehaviour
         {
             PickableItem item = Instantiate(recipe.Result).GetComponent<PickableItem>();
             item.gameObject.SetActive(false);
+            item.SetDescriptionParent(_runtimeDescriptionHolder);
             OnItemCrafted?.Invoke(item);
         }
         else OnItemCraftingFailed?.Invoke(recipe);
