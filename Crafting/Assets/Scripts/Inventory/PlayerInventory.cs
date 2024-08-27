@@ -52,14 +52,4 @@ public class PlayerInventory : MonoBehaviour
         item.SetInventory(this);
         PickItemUp(item);
     }
-    //public void RemoveResourceOfType(CraftingResourceType resourceType)
-    //{
-    //    CraftingResource resource= _craftingResources.Find((x) => x.ResourceType == resourceType);
-    //    InventorySlot slot= _inventorySlots.Find((x) => x.ItemInSlot==resource.AssociatedItem);
-    //    PickableItem item= slot.ItemInSlot;
-    //    slot.EmptySlot();
-    //    _itemsInInventory.Remove(item);
-    //    _craftingResources.Remove(resource);
-        
-    //}
 }
